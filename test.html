@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Dictionnaire des termes informatiques </h1>
+    <div class="container">
+     
+    
+   
+
+    <div class="container_list_princibale">
+        <div class="main_list_principale">
+                <ul class="list_principale" id="list_principale" onclick="ajouterElement(event)">
+                    <!-- deubit des list  -->
+                    <li id="web" data-langage="Developpement web"> <input type="button" value="⧁">  <input type="button" value="⟏"> 
+                        Developpement Web 
+                        <!-- list de developpement web  -->
+
+                        <!-- list des button des insert des list first ou last ou delete les elements  -->
+                        <input type="button"  class="insere_au_debut" value="⊷">
+                        <input type="button" value="⋫" id="supprimer" onclick="supprimerElement('web')" >
+                        <input type="button" class="insere_au_fin" value="⊶">
+                        <!-- fin list des button des insert des list first ou last ou delete les elements  -->
+                        <!-- les elements de list developpement web  -->
+
+                        <ol class="sous_list_principale" >
+                            <li id="cote_client" data-langage="cote client"><span> ⧁</span> <span> ⟏  </span> Cote client 
+                                <span  class="insere_au_debut"> ⊷ </span>
+                                <span  id="supprimer" onclick="supprimerElement('cote_client')" > ⋫ </span>
+                                <span  class="insere_au_fin"> ⊶ </span>
+                                <!-- list sous sous list  -->
+                                <ul class="sous_sous_list">
+                                    <li onclick="afficher_html()" data-langage="HTML">HTML   <span  class="insere_au_debut"> ⊷ </span>
+                                        <span  id="supprimer"> ⋫</span>
+                                        <span  class="insere_au_fin"> ⊶ </span> </li>
+                                    <li onclick="afficher_css()" data-langage="CSS">CSS 
+                                        <span  class="insere_au_debut"> ⊷ </span>
+                                        <span  id="supprimer"> ⋫</span>
+                                        <span  class="insere_au_fin"> ⊶ </span> </li>
+                                    </li>
+                                    <li> ........ 
+                                        <span  class="insere_au_debut"> ⊷ </span>
+                                        <span  id="supprimer"> ⋫</span>
+                                        <span  class="insere_au_fin"> ⊶ </span> </li>
+                                    </li>
+                                    <li>.............
+                                       <span  class="insere_au_debut"> ⊷ </span>
+                                        <span  id="supprimer"> ⋫</span>
+                                        <span  class="insere_au_fin"> ⊶ </span> </li>
+                                    </li>
+                                </ul>
+                                <!-- fin list sous sous list  -->
+
+                            </li>
+                            <li id="cote_serveur" data-langage="cote serveur">
+                                <span> ⧁</span> <span> ⟏  </span> cote serveur  
+                                <span  class="insere_au_debut" onclick="ajouter()"> ⊷ </span>
+                                <span id="supprimer" onclick="supprimerElement('cote_serveur')"> ⋫</span>
+                                <span  class="insere_au_fin"> ⊶ </span>
+                            </li>
+                            <li id="sup_...">
+                                <span> ⧁</span> <span> ⟏  </span> ....  
+                                <span  class="insere_au_debut"> ⊷ </span>
+                                <span  id="supprimer" onclick="supprimerElement('sup_...')" > ⋫</span>
+                            <span  class="insere_au_fin"> ⊶ </span>
+                            </li>
+                            <!-- fin  les elements de list developpement web   -->
+                        </ol>
+                    
+                    
+                    
+                    </li>
+                
+                
+                
+                
+                    <li id="conception" data-langage="conception" ><span> ⧁</span> <span> ⟏  </span> Conception  <span  class="insere_au_debut"> ⊷ </span> <span  id="supprimer" onclick="supprimerElement('conception')"> ⋫</span><span  class="insere_au_fin"> ⊶ </span></li>
+                    <li id="BDD" data-langage="BDD"><span> ⧁</span> <span> ⟏  </span>  BDD  <span  class="insere_au_debut"> ⊷ </span> <span  id="supprimer" onclick="supprimerElement('BDD')"> ⋫</span><span  class="insere_au_fin"> ⊶ </span></li> </li>
+                    <li id="reseau" data-langage="Reseaux informatique"><span> ⧁</span> <span> ⟏  </span> Reseaux informatique  <span  class="insere_au_debut"> ⊷ </span> <span  id="supprimer" onclick="supprimerElement('reseau')"> ⋫</span><span  class="insere_au_fin"> ⊶ </span></ </li>
+                    <li id="sup_sup" ><span> ⧁</span> <span> ⟏  </span> .......   <span  class="insere_au_debut"> ⊷ </span> <span   id="supprimer" onclick="supprimerElement('sup_sup')"> ⋫</span><span  class="insere_au_fin"> ⊶ </span></li> </li>
+                    <!-- fin des elements de list developpement -->
+                </ul>  
+        </div>
+    </div>
+    <!-- fin du contenu des list principal -->
+    <!-- les flux <==> -->
+    <div class="flux">
+        <span id="echangerBtn" onclick="echangerPositionsDivs()" /> ⊲ ⊳
+    </div>
+    
+    <!-- start les module 1 _CSS  -->
+    <!-- <div class="modul_css" id="modul_css_1"  hidden>
+        <h1>Mot : CSS</h1>
+        <div class="difenition_css">
+            <p id="texte">Feuiles de style en cascade : est l'un des langages principaux du Web oubert et a ete standardise par le W3C </p>
+
+        </div>
+        <div class="image_css">
+            <img src="image_css.jpeg" alt="">
+        </div>
+    </div> -->
+    <!-- fin les modules 1 _CSS -->
+    <!-- start les module 2 _HTMLL   -->
+             <div class="modul_css" id="modul_hmlt_2">
+                <h1 id="title"> </h1>
+                <div class="difenition_css">
+                    <p id="paragraph">  </p>
+
+                </div>
+                <div class="image_css">
+                    <img src="" id="image" alt="">
+                </div>
+            </div> 
+    <!-- fin les modules 2 _HMLT -->
+ </div>
+</div> 
+<div id="footer">
+    <p>nombre de mots : <span id="compter"></p>
+        <p> nombre de categorie : <span id="compter_cat"></span></p>
+        <p>nombre moyenne de categorie : <span id="compter_myenne"></span></p>
+        <p>nombre moyen de mots par categorie: <span id="compter_moyen_categorie"></span></p>
+</div>
+
+</body>
+<script src="test.js"></script>
+
+
+
+<!-- <script src="alert."></script> -->
+</html>
